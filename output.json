@@ -1,0 +1,444 @@
+{
+  "stats": {
+    "suites": 6,
+    "tests": 7,
+    "passes": 0,
+    "pending": 0,
+    "failures": 7,
+    "start": "2022-07-05T18:44:49.800Z",
+    "end": "2022-07-05T18:45:42.210Z",
+    "duration": 37298,
+    "testsRegistered": 7,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "e4066f5e-5b93-4710-b36c-2d269422853d",
+      "title": "",
+      "fullFile": "cypress/integration/comboSelectionLogic.spec.js",
+      "file": "cypress/integration/comboSelectionLogic.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "844d78ff-fd09-4380-9490-048a40fb2ce0",
+          "title": "Lógica: Seleção do combo",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Desmarcando ao selecionar outro item",
+              "fullTitle": "Lógica: Seleção do combo Desmarcando ao selecionar outro item",
+              "timedOut": null,
+              "duration": 6031,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.xpath(\"//*[@data-identifier='dishes']//*[@data-identifier='food-option']\").first().as('firstDish');\ncy.analyseElement('@firstDish').as('firstBeforeClick');\ncy.get('@firstDish').click();\ncy.analyseElement('@firstDish').as('firstAfterClick');\ncy.xpath(\"//*[@data-identifier='dishes']//*[@data-identifier='food-option']\").eq(1).as('secondDish');\ncy.analyseElement('@secondDish').as('secondBeforeClick');\ncy.get('@secondDish').click();\ncy.analyseElement('@secondDish').as('secondAfterClick');\ncy.analyseElement('@firstDish').as('firstAfterChange');\ncy.wait(0).then(function () {\n  expect((0, _findSimilarity.default)(this.firstBeforeClick.asHexMatrix.flat(), this.firstAfterClick.asHexMatrix.flat())).to.equal(0);\n  expect((0, _findSimilarity.default)(this.secondBeforeClick.asHexMatrix.flat(), this.secondAfterClick.asHexMatrix.flat())).to.equal(0);\n  expect((0, _findSimilarity.default)(this.firstAfterChange.asHexMatrix.flat(), this.firstAfterClick.asHexMatrix.flat())).to.equal(0);\n});",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `//*[@data-identifier='dishes']//*[@data-identifier='food-option']`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `//*[@data-identifier='dishes']//*[@data-identifier='food-option']`, but never found it.\n    at Context.eval (http://challenge:3000/__cypress/tests?p=cypress/integration/comboSelectionLogic.spec.js:162:8)",
+                "diff": null
+              },
+              "uuid": "de683489-c60e-4434-8be8-96ca1a67214b",
+              "parentUUID": "844d78ff-fd09-4380-9490-048a40fb2ce0",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "de683489-c60e-4434-8be8-96ca1a67214b"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 6031,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "9629ec25-4f08-4c03-b11c-75e6b35143b1",
+      "title": "",
+      "fullFile": "cypress/integration/itemsLayout.spec.js",
+      "file": "cypress/integration/itemsLayout.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "72b71ea1-e3ed-43fd-afc6-7057aad4955d",
+          "title": "Layout: Itens e Botão habilitados",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Check e borda nos itens ao selecioná-los",
+              "fullTitle": "Layout: Itens e Botão habilitados Check e borda nos itens ao selecioná-los",
+              "timedOut": null,
+              "duration": 4810,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.xpath(\"//*[@data-identifier='dishes']//*[@data-identifier='food-option']\").first().as('dish');\ncy.analyseElement('@dish').as('beforeColors');\ncy.get('@dish').click();\ncy.analyseElement('@dish').as('afterColors');\ncy.wait(0).then(function () {\n  expect((0, _findSimilarity.default)(this.beforeColors.asHexMatrix.flat(), this.afterColors.asHexMatrix.flat())).to.equal(0);\n  expect((0, _findInMatrix.default)(this.afterColors.asHexMatrix, '#32b72f')).to.equal('#32b72f');\n});",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `//*[@data-identifier='dishes']//*[@data-identifier='food-option']`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `//*[@data-identifier='dishes']//*[@data-identifier='food-option']`, but never found it.\n    at Context.eval (http://challenge:3000/__cypress/tests?p=cypress/integration/itemsLayout.spec.js:187:8)",
+                "diff": null
+              },
+              "uuid": "c4a18876-2703-452b-8fbb-5671e98e2a01",
+              "parentUUID": "72b71ea1-e3ed-43fd-afc6-7057aad4955d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Mudança de texto e cor no botão flutuante",
+              "fullTitle": "Layout: Itens e Botão habilitados Mudança de texto e cor no botão flutuante",
+              "timedOut": null,
+              "duration": 6107,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.xpath(\"//*[contains(text(),'Selecione os 3 itens')]\").as('button');\ncy.get('@button').should('be.visible');\ncy.shouldNotExistOrShouldNotBeVisible({\n  text: 'Fechar pedido'\n});\ncy.analyseElement('@button').as('buttonBefore');\ncy.selectOptions();\ncy.shouldNotExistOrShouldNotBeVisible({\n  text: 'Selecione os 3 itens'\n});\ncy.xpath(\"//*[contains(text(),'Fechar pedido')]\").should('be.visible');\ncy.xpath(\"//*[contains(text(),'Fechar pedido')]\").as('button');\ncy.analyseElement('@button').as('buttonAfter');\ncy.wait(0).then(function () {\n  expect((0, _findSimilarity.default)(this.buttonBefore.asHexMatrix.flat(), this.buttonAfter.asHexMatrix.flat())).to.equal(0);\n});",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `//*[@data-identifier='dishes']//*[@data-identifier='food-option']`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `//*[@data-identifier='dishes']//*[@data-identifier='food-option']`, but never found it.\n    at clickAndRetrieve (http://challenge:3000/__cypress/tests?p=cypress/support/index.js:453:6)\n    at Context.eval (http://challenge:3000/__cypress/tests?p=cypress/support/index.js:483:10)",
+                "diff": null
+              },
+              "uuid": "90d5282c-c77d-4332-b214-e46569af6433",
+              "parentUUID": "72b71ea1-e3ed-43fd-afc6-7057aad4955d",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "c4a18876-2703-452b-8fbb-5671e98e2a01",
+            "90d5282c-c77d-4332-b214-e46569af6433"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 10917,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "f1f90070-ecb1-4006-9a66-7f6ac8ecabb7",
+      "title": "",
+      "fullFile": "cypress/integration/messageContentLogic.spec.js",
+      "file": "cypress/integration/messageContentLogic.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "6f9e10ae-8e43-4f51-991f-8c871e59810c",
+          "title": "Lógica: Conteúdo da mensagem de acordo com o combo",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "A mensagem deve estar com pratos e preço de acordo com o que o usuário escolheu",
+              "fullTitle": "Lógica: Conteúdo da mensagem de acordo com o combo A mensagem deve estar com pratos e preço de acordo com o que o usuário escolheu",
+              "timedOut": null,
+              "duration": 4527,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.selectOptions().then(data => {\n  cy.orderConfirm().then(() => {\n    cy.window().then(win => {\n      expect((0, _messageMatch.default)(win.location.href, data)).to.equal(1);\n    });\n  });\n});",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `//*[@data-identifier='dishes']//*[@data-identifier='food-option']`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `//*[@data-identifier='dishes']//*[@data-identifier='food-option']`, but never found it.\n    at clickAndRetrieve (http://challenge:3000/__cypress/tests?p=cypress/support/index.js:453:6)\n    at Context.eval (http://challenge:3000/__cypress/tests?p=cypress/support/index.js:483:10)",
+                "diff": null
+              },
+              "uuid": "aa898805-b97f-416d-924a-77c5f6dcdd5f",
+              "parentUUID": "6f9e10ae-8e43-4f51-991f-8c871e59810c",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "aa898805-b97f-416d-924a-77c5f6dcdd5f"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 4527,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "c0763d62-f8a2-40d9-83e1-3e71fd12a76b",
+      "title": "",
+      "fullFile": "cypress/integration/messageFormatLogic.spec.js",
+      "file": "cypress/integration/messageFormatLogic.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "17895e57-f6e1-4470-9032-e3f36c3a0235",
+          "title": "Lógica: Formatação de mensagem conforme requisito",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Formatação de mensagem de acordo com o formato proposto",
+              "fullTitle": "Lógica: Formatação de mensagem conforme requisito Formatação de mensagem de acordo com o formato proposto",
+              "timedOut": null,
+              "duration": 4610,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.selectOptions().then(data => {\n  cy.orderConfirm().then(() => {\n    cy.window().then(win => {\n      expect((0, _messageMatch.default)(win.location.href, data, 'format')).to.equal(2);\n    });\n  });\n});",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `//*[@data-identifier='dishes']//*[@data-identifier='food-option']`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `//*[@data-identifier='dishes']//*[@data-identifier='food-option']`, but never found it.\n    at clickAndRetrieve (http://challenge:3000/__cypress/tests?p=cypress/support/index.js:453:6)\n    at Context.eval (http://challenge:3000/__cypress/tests?p=cypress/support/index.js:483:10)",
+                "diff": null
+              },
+              "uuid": "2beee093-09fe-44c0-a4bf-173576abe59e",
+              "parentUUID": "17895e57-f6e1-4470-9032-e3f36c3a0235",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "2beee093-09fe-44c0-a4bf-173576abe59e"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 4610,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "3c6b2f39-3073-41ff-9528-e58b2cd58eab",
+      "title": "",
+      "fullFile": "cypress/integration/orderButtonLogic.spec.js",
+      "file": "cypress/integration/orderButtonLogic.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "013d346f-7a7e-4486-a7c3-eebc6af07fc4",
+          "title": "Lógica: Habilitar botão de enviar pedido",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Botão de enviar pedido fica desabilitado até selecionar todos os pedidos",
+              "fullTitle": "Lógica: Habilitar botão de enviar pedido Botão de enviar pedido fica desabilitado até selecionar todos os pedidos",
+              "timedOut": null,
+              "duration": 6562,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.xpath(\"//*[contains(text(),'Selecione os 3 itens')]\").first().as('button');\ncy.analyseElement('@button').as('buttonBeforeAll');\ncy.xpath(\"//*[contains(text(),'Selecione os 3 itens')]\").should('be.visible');\ncy.xpath(\"//*[@data-identifier='dishes']//*[@data-identifier='food-option']\").first().click();\ncy.analyseElement('@button').as('buttonAfterOne');\ncy.xpath(\"//*[contains(text(),'Selecione os 3 itens')]\").should('be.visible');\ncy.xpath(\"//*[@data-identifier='drinks']//*[@data-identifier='food-option']\").first().click();\ncy.analyseElement('@button').as('buttonAfterTwo');\ncy.xpath(\"//*[contains(text(),'Selecione os 3 itens')]\").should('be.visible');\ncy.xpath(\"//*[@data-identifier='desserts']//*[@data-identifier='food-option']\").first().click();\ncy.xpath(\"//*[contains(text(),'Fechar pedido')]\").as('button');\ncy.analyseElement('@button').as('buttonAfterThree');\ncy.wait(0).then(function () {\n  cy.xpath(\"//*[contains(text(),'Fechar pedido')]\").should('be.visible');\n  expect((0, _findSimilarity.default)(this.buttonBeforeAll.asHexMatrix.flat(), this.buttonAfterOne.asHexMatrix.flat())).to.equal(1);\n  expect((0, _findSimilarity.default)(this.buttonAfterOne.asHexMatrix.flat(), this.buttonAfterTwo.asHexMatrix.flat())).to.equal(1);\n  expect((0, _findSimilarity.default)(this.buttonAfterTwo.asHexMatrix.flat(), this.buttonAfterThree.asHexMatrix.flat())).to.equal(0);\n  expect((0, _findInMatrix.default)(this.buttonAfterThree.asHexMatrix, '#32b72f')).to.equal('#32b72f');\n});",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `//*[@data-identifier='dishes']//*[@data-identifier='food-option']`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `//*[@data-identifier='dishes']//*[@data-identifier='food-option']`, but never found it.\n    at Context.eval (http://challenge:3000/__cypress/tests?p=cypress/integration/orderButtonLogic.spec.js:190:8)",
+                "diff": null
+              },
+              "uuid": "ba49af8a-3ede-44ed-9298-d14ea9b4496b",
+              "parentUUID": "013d346f-7a7e-4486-a7c3-eebc6af07fc4",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "ba49af8a-3ede-44ed-9298-d14ea9b4496b"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 6562,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "654591ae-13db-4d84-b70f-935c16c4fa4d",
+      "title": "",
+      "fullFile": "cypress/integration/whatsLogic.spec.js",
+      "file": "cypress/integration/whatsLogic.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "e2eb7e6f-8d97-46f2-9569-e941e7cd6cfe",
+          "title": "Lógica: Envio por WhatsApp",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "O pedido é encaminhado por WhatsApp após clicar em enviar o pedido",
+              "fullTitle": "Lógica: Envio por WhatsApp O pedido é encaminhado por WhatsApp após clicar em enviar o pedido",
+              "timedOut": null,
+              "duration": 4651,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.selectOptions();\ncy.orderConfirm();\ncy.url().should('contain', 'https://api.whatsapp.com/send/?phone');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `//*[@data-identifier='dishes']//*[@data-identifier='food-option']`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `//*[@data-identifier='dishes']//*[@data-identifier='food-option']`, but never found it.\n    at clickAndRetrieve (http://challenge:3000/__cypress/tests?p=cypress/support/index.js:453:6)\n    at Context.eval (http://challenge:3000/__cypress/tests?p=cypress/support/index.js:483:10)",
+                "diff": null
+              },
+              "uuid": "8f61f4e6-a463-4e70-9747-125e167840a4",
+              "parentUUID": "e2eb7e6f-8d97-46f2-9569-e941e7cd6cfe",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "8f61f4e6-a463-4e70-9747-125e167840a4"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 4651,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "spec": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "weights": {
+    "Lógica: Habilitar botão de enviar pedido": 2,
+    "Lógica: Envio por WhatsApp": 1,
+    "Lógica: Conteúdo da mensagem de acordo com o combo": 3,
+    "Lógica: Formatação de mensagem conforme requisito": 1,
+    "Layout: Itens e Botão habilitados": 1,
+    "Lógica: Seleção do combo": 3
+  }
+}

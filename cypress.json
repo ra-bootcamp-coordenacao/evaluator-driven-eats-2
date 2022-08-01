@@ -1,0 +1,9 @@
+{
+  "env": { "url": "http://challenge:3000/" },
+  "chromeWebSecurity": false,
+  "reporter": "cypress-multi-reporters",
+  "video": false,
+  "reporterOptions": {
+    "configFile": "reporter.json"
+  }
+}

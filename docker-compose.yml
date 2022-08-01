@@ -1,0 +1,30 @@
+version: '3'
+services:
+    challenge:
+        image: python
+        working_dir: /challenge
+        command: python3 -m http.server 3000
+        volumes:
+            - ../challenge:/challenge
+        ports:
+            - "3000:3000"
+    
+    evaluator:
+        image: gcr.io/driven-education-staging/evaluator-tool---evaluator
+        working_dir: /evaluator
+        entrypoint: ["/bin/sh","-c"]
+        command:
+            - |
+              npm i
+              npx -y cypress install
+              npm run test
+              npm run merge
+        volumes:
+            - ./:/evaluator
+        depends_on:
+            - challenge
+
+networks:
+  default:
+    external:
+      name: evaluator
