@@ -10,9 +10,7 @@ services:
             - "3000:3000"
     
     evaluator:
-        image: gcr.io/driven-education-staging/evaluator-tool---evaluator
-        environment:
-            - CYPRESS_CACHE_FOLDER=/evaluator/cypress-cache/
+        build: .
         working_dir: /evaluator
         entrypoint: ["/bin/sh","-c"]
         command:
