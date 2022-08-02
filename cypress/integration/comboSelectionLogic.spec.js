@@ -7,6 +7,10 @@ beforeEach(() => {
 });
 
 describe('Lógica: Seleção do combo', () => {
+  it('Teste', () => {
+    cy.get('[data-test="test-me"]').should('be.visible');
+  });
+
   it('Desmarcando ao selecionar outro item', () => {
     cy.xpath(
         "//*[@data-identifier='dishes']//*[@data-identifier='food-option']"

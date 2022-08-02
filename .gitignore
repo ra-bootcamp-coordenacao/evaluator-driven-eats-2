@@ -1,1 +1,4 @@
 node_modules
+cypress-cache
+cypress/reports
+cypress/screenshots
